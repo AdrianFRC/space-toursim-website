@@ -96,6 +96,7 @@ nav {
   width: 70vw;
   height: 100%;
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter:  blur(20px);
   padding: 34px;
   display: none;
   z-index: 4;
@@ -237,7 +238,7 @@ nav ul a:hover {
   text-transform: uppercase;
 }
 
-.planet ul a:hover {
+.planet ul li a:hover {
   cursor: pointer;
   text-decoration: underline 2px solid var(--whiteTransparent);
   text-underline-offset: 10px;
