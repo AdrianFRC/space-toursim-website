@@ -98,7 +98,7 @@ nav {
   backdrop-filter: blur(20px);
   padding: 34px;
   display: none;
-  z-index: 2;
+  z-index: 4;
 }
 
 nav img {
