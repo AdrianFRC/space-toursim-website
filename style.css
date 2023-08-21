@@ -89,14 +89,19 @@ header {
   width: 100%;
 }
 
+.line{
+  display: none;
+}
+
 nav {
   position: fixed;
   top: 0;
   right: 0;
   width: 70vw;
   height: 100%;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter:  blur(20px);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
   padding: 34px;
   display: none;
   z-index: 4;
@@ -179,13 +184,18 @@ nav ul a:hover {
   transition: 300ms ease-in-out;
 }
 
-.mobile-background {
+.background {
   width: 100%;
   height: 100vh;
   z-index: -1;
   position: fixed;
   top: 0;
   left: 0;
+}
+
+.tablet,
+.desktop {
+  display: none;
 }
 
 #logo {
@@ -225,12 +235,14 @@ nav ul a:hover {
 
 .text-container ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 25px;
   margin-inline: 50px;
 }
 
 .crew ul {
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 25px;
   margin-inline: 95px;
 }
 
@@ -344,9 +356,12 @@ nav ul a:hover {
 
 #technology {
   width: 100vw;
-  height: auto;
+  height: 170px;
   left: -24px;
   position: absolute;
+}
+#technology-portrait {
+  display: none;
 }
 
 .technology-img {
@@ -377,11 +392,413 @@ nav ul a:hover {
   letter-spacing: 1px;
 }
 
-.circle:hover{
+.circle:hover {
   border: 1px solid var(--white);
 }
 
-.current{
+.current {
   background-color: var(--white);
   color: var(--darkblue);
+}
+
+@media screen and (min-width: 600px) {
+  h1 {
+    font-size: 150px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150px;
+  }
+
+  h5 {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 3.375px;
+  }
+
+  p {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+  }
+
+  .explore-button {
+    width: 242px;
+    height: 242px;
+    padding-top: 100px;
+    margin-top: 156px;
+  }
+
+  .explore-button a {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2px;
+  }
+
+  .text-container {
+    width: 445px;
+    margin: auto;
+    margin-top: 106px;
+  }
+
+  .mobile,
+  .desktop {
+    display: none;
+  }
+
+  .tablet {
+    display: block;
+  }
+  #logo {
+    height: 48px;
+    width: 48px;
+    margin: 24px;
+    margin-left: 39px;
+  }
+  #menu-icon {
+    display: none;
+  }
+
+  nav {
+    display: block;
+    width: 450px;
+    height: 100px;
+  }
+  nav img {
+    display: none;
+  }
+  nav ul {
+    margin: 0px;
+    flex-direction: row;
+  }
+  nav ul li span {
+    display: none;
+  }
+  nav ul li a:hover {
+    text-decoration: underline 2px solid var(--white);
+    text-underline-offset: 48px;
+  }
+
+  nav ul li a {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2.362px;
+  }
+  .text-container ul {
+    gap: 35px;
+    justify-content: center;
+  }
+  .text-container ul a {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2.7px;
+  }
+
+  .planet {
+    width: 573px;
+  }
+  .planet h5,
+  .crew h5,
+  .technology h5 {
+    position: absolute;
+    left: 40px;
+    top: 136px;
+  }
+  .planet h1 {
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .text-container img {
+    margin-top: 42px;
+    width: 300px;
+    height: 300px;
+  }
+  .data {
+    flex-direction: row;
+    justify-content: center;
+    gap: 80px;
+  }
+  .data h1 {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  #crew {
+    margin-top: 0;
+    height: 100%;
+  }
+  .crew-portrait {
+    width: 500px;
+    height: 532px;
+    z-index: -1;
+    border: none;
+    order: 2;
+  }
+
+  .crew h4 {
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .crew h6 {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .crew ul {
+    order: 1;
+  }
+
+  .technology {
+    margin-top: 400px;
+  }
+  .technology-img {
+    position: inherit;
+  }
+
+  .technology h2 {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .technology h4 {
+    font-size: 40px;
+  }
+  #technology {
+    height: 400px;
+    top: 180px;
+    left: 4px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  h1 {
+    font-size: 150px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  h5 {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 4.725px;
+  }
+
+  p {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+  }
+
+  .explore-button {
+    position: absolute;
+    width: 274px;
+    height: 274px;
+    padding-top: 120px;
+    top: 330px;
+    right: 20%;
+  }
+
+  .explore-button a {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2px;
+  }
+
+  .text-container {
+    text-align: left;
+    margin-top: 340px;
+    margin-left: 10%;
+    gap: 25px;
+  }
+
+  .text-container ul {
+    justify-content: left;
+    margin: 0;
+  }
+
+  .text-container img {
+    width: 450px;
+    height: auto;
+    position: absolute;
+    translate: -130%;
+    margin-top: 0;
+  }
+
+  .line {
+    display: block;
+    height: 1px;
+    opacity: 0.2515;
+    background: #fff;
+    position: absolute;
+    left: 167px;
+    top: 87px;
+    z-index: 5;
+    right: 790px;
+  }
+  nav ul li span:hover {
+    text-decoration: none;
+  }
+  nav {
+    display: block;
+    width: 830px;
+    height: 100px;
+    padding-inline: 120px;
+    margin-top: 40px;
+  }
+
+  nav ul li {
+    display: flex;
+  }
+  nav ul li span {
+    display: block;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2.7px;
+  }
+
+  .tablet,
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    display: block;
+  }
+  #logo {
+    margin: 64px;
+    margin-left: 55px;
+  }
+
+  .data {
+    flex-direction: row;
+    justify-content: left;
+    gap: 80px;
+  }
+
+  .planet {
+    width: 450px;
+    gap: 50px;
+    margin-top: 340px;
+    margin-left: 55%;
+  }
+
+  .planet h5,
+  .crew h5,
+  .technology h5 {
+    left: 13%;
+    top: 262px;
+  }
+
+  .planet h1 {
+    font-size: 100px;
+    margin-bottom: 30px;
+  }
+  .data h1 {
+    font-size: 28px;
+  }
+  .crew,
+  .technology {
+    justify-content: left;
+    width: 490px;
+    gap: 27px;
+  }
+  .crew h6,
+  .crew h4 {
+    text-align: left;
+  }
+  .crew h6 {
+    font-size: 32px;
+  }
+  .crew h4,
+  .technology h4 {
+    text-align: left;
+    font-size: 56px;
+  }
+  .crew ul {
+    margin-top: 120px;
+    margin-left: 15px;
+  }
+
+  #crew {
+    position: inherit;
+    translate: 0;
+    height: 100%;
+  }
+  .crew-portrait {
+    position: fixed;
+    bottom: 0;
+    right: 10%;
+    height: 712px;
+    translate: 0;
+    z-index: -1;
+  }
+
+  .technology {
+    width: 600px;
+  }
+
+  .technology h2,
+  .technology h4,
+  .technology p {
+    padding-left: 20%;
+  }
+  .technology-img {
+    height: 400px;
+    position: absolute;
+    right: 0;
+  }
+  #technology-portrait {
+    display: block;
+    width: 40vw;
+    max-width: 600px;
+    height: auto;
+    position: relative;
+    translate: 0;
+    top: -100px;
+    z-index: -1;
+  }
+  #technology {
+    display: none;
+  }
+
+  .technology ul {
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    /* margin-top: 25px; */
+  }
+
+  .circle {
+    width: 80px;
+    height: 80px;
+    font-size: 32px;
+    padding: 20px;
+  }
 }
