@@ -19,6 +19,7 @@ function adjustElementDisplay() {
 }
 
 const crew = document.querySelectorAll(".crew-portrait");
+const technology = document.querySelectorAll(".technology-img");
 
 let startX = 0;
 let scrolling = false;
@@ -28,7 +29,7 @@ function handleTouchStart(event) {
   scrolling = true;
 }
 
-function handleTouchMove(event) {
+function handleTouchMoveLeft(event) {
   if (!scrolling) return;
 
   const currentX = event.touches[0].pageX;
@@ -36,7 +37,6 @@ function handleTouchMove(event) {
 
   if (deltaX > 50) {
     scrolling = false;
-    console.log(event.currentTarget.id);
     switch (event.currentTarget.id) {
       case "1":
         window.location.href = "crew-specialist.html";
@@ -50,6 +50,48 @@ function handleTouchMove(event) {
       case "4":
         window.location.href = "crew-commander.html";
         break;
+      case "5":
+        window.location.href = "technology-spaceport.html";
+        break;
+      case "6":
+        window.location.href = "technology-capsule.html";
+        break;
+      case "7":
+        window.location.href = "technology-vehicle.html";
+        break;
+    }
+  }
+}
+function handleTouchMoveRight(event) {
+  if (!scrolling) return;
+
+  const currentX = event.touches[0].pageX;
+  const deltaX = currentX - startX;
+
+  if (deltaX > 50) {
+    scrolling = false;
+    switch (event.currentTarget.id) {
+      case "1":
+        window.location.href = "crew-engineer.html";
+        break;
+      case "2":
+        window.location.href = "crew-commander.html";
+        break;
+      case "3":
+        window.location.href = "crew-specialist.html";
+        break;
+      case "4":
+        window.location.href = "crew-pilot.html";
+        break;
+      case "5":
+        window.location.href = "technology-capsule.html";
+        break;
+      case "6":
+        window.location.href = "technology-vehicle.html";
+        break;
+      case "7":
+        window.location.href = "technology-spaceport.html";
+        break;
     }
   }
 }
@@ -60,9 +102,19 @@ function handleTouchEnd() {
 
 crew.forEach((members) => {
   members.addEventListener("touchstart", handleTouchStart);
-  members.addEventListener("touchmove", handleTouchMove);
+  members.addEventListener("touchmove", handleTouchMoveLeft);
+  members.addEventListener("touchmove", handleTouchMoveRight);
   members.addEventListener("touchend", handleTouchEnd);
 });
 
+technology.forEach((tech) => {
+  tech.addEventListener("touchstart", handleTouchStart);
+  tech.addEventListener("touchmove", handleTouchMoveLeft);
+  tech.addEventListener("touchmove", handleTouchMoveRight);
+  tech.addEventListener("touchend", handleTouchEnd);
+});
+
+
 window.onload = adjustElementDisplay;
 window.onresize = adjustElementDisplay;
+

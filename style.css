@@ -107,6 +107,7 @@ nav {
   z-index: 4;
 }
 
+
 nav img {
   margin-left: 90%;
 }
@@ -253,6 +254,7 @@ nav ul a:hover {
 .planet ul li a:hover {
   cursor: pointer;
   text-decoration: underline 2px solid var(--whiteTransparent);
+  -webkit-text-decoration: underline 2px solid var(--whiteTransparent);
   text-underline-offset: 10px;
 }
 
@@ -260,6 +262,7 @@ nav ul a:hover {
   cursor: pointer;
   color: var(--white);
   text-decoration: underline 2px solid;
+  -webkit-text-decoration: underline 2px solid;
   text-underline-offset: 10px;
 }
 
@@ -480,6 +483,13 @@ nav ul a:hover {
   }
   nav ul li a:hover {
     text-decoration: underline 2px solid var(--white);
+    -webkit-text-decoration: underline 2px solid var(--white);
+    text-underline-offset: 48px;
+  }
+
+  #current-page{
+    text-decoration: underline 2px solid var(--white);
+    -webkit-text-decoration: underline 2px solid var(--white);
     text-underline-offset: 48px;
   }
 
@@ -616,7 +626,7 @@ nav ul a:hover {
     height: 274px;
     padding-top: 120px;
     top: 330px;
-    right: 20%;
+    right: 13%;
   }
 
   .explore-button a {
@@ -652,7 +662,7 @@ nav ul a:hover {
     height: 1px;
     opacity: 0.2515;
     background: #fff;
-    position: absolute;
+    position: fixed;
     left: 167px;
     top: 87px;
     z-index: 5;
